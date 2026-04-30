@@ -68,3 +68,67 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+Customer Management Dashboard
+A full-stack web application to add, view, and delete customers using React + Node.js + Express.
+
+Features
+
+Add a new customer with Name, Email, Phone Number
+View all customers in a table with alternating row colours
+Delete any customer with a red Delete button + confirm dialog
+Client-side form validation
+In-memory backend storage (resets on server restart)
+Responsive layout — works on mobile and desktop
+
+
+Project Structure
+customer-mgmt/
+├── backend/
+│   ├── server.js          ← Express REST API (all 3 routes)
+│   └── package.json
+│
+└── frontend/
+    ├── public/
+    │   └── index.html
+    ├── src/
+    │   ├── components/
+    │   │   ├── Navbar.jsx         ← Top navigation bar
+    │   │   ├── CustomerForm.jsx   ← Add customer form
+    │   │   └── CustomerTable.jsx  ← Customer list table
+    │   ├── App.js                 ← Root — state + fetch + delete logic
+    │   ├── App.css                ← Global styles
+    │   └── index.js               ← React entry point
+    └── package.json
+
+API Endpoints
+MethodEndpointDescriptionResponseGET/customersGet all customers[{ id, name, email, phone }]POST/customersAdd a new customer{ id, name, email, phone }DELETE/customers/:idDelete a customer by UUID{ message }
+POST /customers — Request Body
+json{
+  "name":  "Priya Sharma",
+  "email": "priya@example.com",
+  "phone": "9876543210"
+}
+
+Setup & Running
+1. Backend
+bashcd backend
+npm install
+npm start          # runs on http://localhost:5000
+# or for auto-reload:
+npm run dev
+2. Frontend
+bashcd frontend
+npm install
+npm start          # runs on http://localhost:3000
+Open http://localhost:3000 in your browser. The frontend calls the backend at http://localhost:5000.
+
+Assumptions
+
+No database — data is stored in a JavaScript array and resets on server restart.
+Both servers must be running simultaneously.
+CORS is enabled on the backend so the React dev server can call it.
+uuid is used to generate unique IDs for each customer.
+#
