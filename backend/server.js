@@ -17,8 +17,12 @@ app.use(
       "https://arali-customer-dashboard.vercel.app"
     ],
     methods: ["GET", "POST", "DELETE"],
+    credentials: true,
+
   })
 );
+
+app.use(express.json());
 
 let customers = [
   {
