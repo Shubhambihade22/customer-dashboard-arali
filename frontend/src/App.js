@@ -9,7 +9,7 @@ import linkedin from "../src/assets/linkedin.png";
 import xlogo from "../src/assets/xlogo.png";
 import aralilogo from "../src/assets/aralilogo.png";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://customer-dashboard-arali.onrender.com";;
 
 function App() {
   const [customers, setCustomers] = useState([]);

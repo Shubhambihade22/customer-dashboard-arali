@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import addcustomer from "../assets/addcustomer.png";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://customer-dashboard-arali.onrender.com";
 
 const CustomerForm = ({ onCustomerAdded }) => {
   const [name, setName] = useState("");
