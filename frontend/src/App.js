@@ -9,7 +9,7 @@ import linkedin from "../src/assets/linkedin.png";
 import xlogo from "../src/assets/xlogo.png";
 import aralilogo from "../src/assets/aralilogo.png";
 
-const BASE_URL = "https://customer-dashboard-arali.onrender.com";;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function App() {
   const [customers, setCustomers] = useState([]);

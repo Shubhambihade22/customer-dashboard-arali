@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const express = require("express");
 const cors = require("cors");
 const { v4: uuidv4 } = require("uuid");
@@ -12,13 +11,9 @@ const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://arali-customer-dashboard.vercel.app"
-    ],
+    origin: [FRONTEND_URL, "http://localhost:3000"],
     methods: ["GET", "POST", "DELETE"],
     credentials: true,
-
   })
 );
 
